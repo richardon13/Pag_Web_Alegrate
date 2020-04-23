@@ -1,0 +1,763 @@
+/* elegir colores de el DOM */
+
+:root{
+    --fuchsia:rgb(255,0,128);
+    --azul:rgb(0,128,255);
+    --green:rgb(60,240,60);
+    --white:rgb(255,255,255);
+}
+
+ *{ /*Selectror universal para que se vea igual en todos los navegadores */ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*para que los elementos no crezcan cuando se utilice un padding*/
+}
+
+body{
+    background: #fff; /*Fondo blanco*/
+    overflow-x: hidden; /*que lo cubra todo el eje x sin scroll horizontal*/
+    font-family: 'Comic Neue', cursive; /*tipo de letra https://fonts.google.com/} */
+}
+
+/*** Go Top ***/
+
+.go-top{
+    position: fixed;
+    bottom: 100px;
+    right: -100%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--fuchsia);
+    background: #fff;
+    z-index: 9999;
+    border-radius: 10px;
+    
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.go-top:hover{
+    border:2px solid var(--white);
+    background: var(--fuchsia);
+}
+.go-top > span{
+    font-size: 30px;
+    color: var(rgb(0,0,0));
+}
+
+/**** SKEW ****/
+
+.skew-abajo{ /*Genera un SKEW: linea inclinada a las imagenees de fondo viendose mas moderno*/
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 10vh 100vw;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.skew-arriba{ /*Genera un SKEW: linea inclinada a las imagenees de fondo viendose mas moderno*/
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 10vh 100vw 0 0;
+    border-style: solid;
+    border-color:  #fff transparent transparent transparent;
+    z-index: 10;
+}
+
+/*** Go Top ***/
+
+/*Menu de Navegacion*/
+
+
+ #header{
+     position: relative;
+     width:100%;
+} 
+
+.menu{ /*Barra superior menu*/
+    position: fixed; /*menu fijo cuando se haga scroll*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    
+    display: flex; /* El elemento se comporta como un elemento de bloque y presenta su contenido (menu derecho) */
+    justify-content: space-between; /*justifica el menu */
+    align-items: center;
+    z-index: 9999;
+}
+
+.menu .logo-boximg{
+    margin-left: 20px; 
+}
+.menu .logo-boximg a img{
+    width:13%;
+    height: 60px;
+}
+
+.menu .list-container{
+    margin-right: 20px;    
+}
+
+.menu .list-container .lists{
+    display: flex; /*bloque derecho menu alineado en una sola linea*/
+}
+
+.menu .list-container .lists li {
+    list-style: none; /* le quita las vinetas*/
+}   
+
+.menu .list-container .lists li a{
+    text-decoration: none; 
+    margin: 0px 10px; /*espacio entre cada uno de los elementos del menu bloque derecho*/
+    padding: 8px;
+    color: var(--fuchsia);
+    border-radius: 24px; 
+    font-size: 16px;
+    transition: 0.3s;    
+}
+
+.menu .list-container .lists li a.activo{
+    background: var(--green); /*fondo verde de inicio*/
+    color: #fff;
+}
+
+.menu .list-container .lists li a:hover{ 
+    background: var(--green); /*fondo verde de los contenidos pertenecientes al display cunado se ubique en ellos */
+    color: #fff;
+}
+
+.btn-menu > .fa-bars{
+    display: none; 
+}  
+
+/* Menu de Navegacion */
+
+/* IMG Header (Imagen del encabezado*/ 
+
+.Img-header{ 
+    position: relative;
+    width: 100%; /*ocupa todo el ancho d ela pantalla*/
+    height: 100vh; /*100% del alto de la pantalla*/
+    background: url(./Imagenes/imgevent-15.jpeg);
+    background-attachment: fixed; /*imagen fija*/
+    background-position: center;
+    background-size: cover; /*img tamano original*/
+}
+
+.Img-header .bienvenido{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6); /*coloca la imagen de fondo un poco mas oscura*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Img-header .bienvenido h1{
+    font-size: 50px;
+    color: #fff;
+    font-weight: 200;
+}
+
+.Img-header .bienvenido hr{
+    width: 400px;
+    height: 2px;
+    background: #fff;
+    border: none;
+    margin-top: 5px;
+}
+
+.Img-header .bienvenido p{
+    font-size: 20px;
+    color: #fff;
+    margin-top: 20px;       
+}
+
+.Img-header .bienvenido > button{ /*boton: ver abajo*/
+    width: 170px;
+    height: 40px;
+    background: var(--fuchsia);
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.Img-header .bienvenido > button:hover{
+    background: var(--green);
+}
+
+
+/* IMG Header */
+
+
+/* Acerca de nosostros */
+
+.acerca-de{
+    width: 100%;
+    margin-top: 120px; /*para que este muy separado de la seccion anterior*/
+}
+
+.acerca-de .info-container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.acerca-de .info-container h1{
+
+    font-size: 50px;
+    font-weight: 400;
+    color: var(--fuchsia);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.acerca-de .info-container p{
+    text-align: center;
+    font-size: 17px;
+    color: black;
+    line-height: 35px;
+    margin: 10px 0px;   
+}
+
+.acerca-de .info-container .about-gallery{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     margin: 50px 0px;
+     flex-direction: column;
+    }
+    
+.acerca-de .info-container .about-gallery img{
+    width: calc(33.33%-10px);
+    height: 300px;
+    object-fit: cover;
+    margin: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.acerca-de .info-container .about-more{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.acerca-de .info-container .about-more button{
+    width: 120px;
+    height: 40px;
+    background: var(--fuchsia);
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.acerca-de .info-container .about-more button:hover{
+    background: var(--green);
+}
+
+/* Acerca de nosostros */
+
+
+/* Algunos de Nuestros Eventos */
+
+.our-events{    
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(./Imagenes/imgevent-16.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; /*para que redimensione la imagen*/
+    margin-top: 100px; /*para que este muy separado de la seccion anterior*/
+}
+
+ .our-events .deg-background{
+    position: absolute; /*para que quede sobreposicionado sobre el resto*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8); /*aclarar el negro*/    
+ }
+
+ .our-events .ejeZevents{ /* superpone el contenido del html cobre el negro aclarado de css anterior*/
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.our-events .container-event{
+    width: 90%;
+    margin: auto;
+    padding-top: 100px;
+} 
+
+.our-events .container-event .event-title{
+    border: 2px solid #fff; /* genera un rectangulo que encierra el titulo*/
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+    margin: auto;   
+}
+
+.our-events .container-event .event-title h2{
+    font-size: 40px;
+    font-weight: normal;
+    color: rgb(255,0,128);
+}
+
+.our-events .container-event .event-title hr{
+    background: #fff;
+    width: 50%;
+    margin: 10px auto;
+}
+
+.our-events .container-event .img-event{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    padding-bottom: 100px; 
+}
+
+.our-events .container-event .img-event img{
+    width: calc(30%-10px);
+    margin: 20px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Algunos de Nuestros Eventos */
+
+
+/*Clientes Satisfechos*/
+
+.our-customers{ /*elemento padre*/
+    width: 100%; /* ancho del 100%*/
+    margin-top: 120px; /*para que este muy separado de la seccion anterior*/
+}
+
+.our-customers .customers-title{ /*elemento Hijo*/
+    width: 50%;
+    margin: auto;
+    text-align: center; /*Titulo centrado*/
+}
+
+.our-customers .customers-title h2{
+    font-size: 50px; /*tamano del titulo*/
+    color: var(--fuchsia); /*color del titulo*/
+    font-weight: normal; /*grosor del titulo*/
+    margin-bottom: 10px; /*espacio hacia abajo*/    
+}
+
+.our-customers .customers-title hr{ /*propiedades del espacio en blanco*/
+    width: 60%;
+    margin: auto; /*interlineado se acomoda automaticamente al tamano del titulo*/
+    height: 2px; /*grososr del interlineado*/
+    background: rgb(255,0,128); /*color del interlineado*/
+    border: none; /*sin borde el interlineado*/
+}
+
+.our-customers .satisfechos{ /*padre de la seccion de fotos y comentarios*/
+    width: 90%; /*ancho del 90%*/
+    margin: 80px auto; /* margen de 80 px */
+    display: flex; /*reune todas las imagenes y texto en una sola linea*/
+    justify-content: center; /*centra las imagenes*/
+    flex-wrap: wrap; /*pasa todo el contenido ordenado en forma de columna teniendo en cuenta 
+                   /*que pueden caber 1 elemento o mas en 1 sola linea*/
+}
+
+.our-customers .satisfechos .customers-card{ /*configuracion de las tarjetas*/
+    width: 75%; /*acho:45% del elemento padre*/
+    margin: 20px;/*margen con respecto al elemento padre*/
+}
+
+.our-customers .satisfechos .customers-card .card-img{
+    width: 100%;
+    display: flex; /* compacta el contenido*/
+    justify-content: center; 
+    align-items: center;
+}
+
+.our-customers .satisfechos .customers-card .card-img img{    
+    border-radius: 50%; /*convierte las imagenes en redondas*/
+    object-fit: cover;  /*le da formato a la imagen*/
+    cursor: pointer;
+}
+
+.our-customers .satisfechos .customers-card .client-info{
+    width: 100%;
+    border: 2px solid var(--azul); /* un cuadro o borde al rededor del texto*/
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 200ms;
+    margin-top: 30px;
+}
+
+.our-customers .satisfechos .customers-card .client-info h4{
+    color: var(red);
+    font-weight: normal;
+    font-size: 27px;        
+    text-align: center;
+    margin-bottom: 20px;
+    transition: 200ms;
+}
+
+.our-customers .satisfechos .customers-card .client-info p{
+    font-size: 19px;
+    color: var(black);
+    text-align: center;
+    line-height: 35px;
+    transition: 200ms;
+}
+
+.our-customers .satisfechos .customers-card .client-info:hover{
+    border: 2px solid var(--green);
+}
+
+.our-customers .satisfechos .customers-card .client-info:hover h4{
+    color: var(--green);
+}
+
+/*Clientes Satisfechos*/
+
+
+/**Footer**/
+
+.footer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(./Imagenes/imgevent-9.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.footer .deg-footer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.footer .ejeZfooter{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.footer .footer-content{
+    width: 90%;
+    padding-top: 100px; 
+    margin: auto;
+}
+
+.footer .footer-content .footer-title{
+    width: 50%;
+    margin: auto;
+    border: 2px solid #fff;
+    padding: 15px;
+}
+
+.footer .footer-content .footer-title h2{
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.footer .footer-content .footer-title hr{
+    width: 80%;
+    margin: auto;
+}
+
+.footer .footer-content .formulario-content{
+    width: 60%;    
+    background: #fff;
+    border-radius: 24px;
+    border: 2px solid var(--fuchsia);
+    margin: 50px auto;
+    padding: 30px;
+    margin-bottom: 150px;
+}
+
+.footer .footer-content .formulario-content #formulario{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.footer .footer-content .formulario-content #formulario label{
+    text-align: center;
+    color: rgb(0,0,0);
+    font-size: 22px;
+    margin: 30px 0px 30px 0px;
+}
+
+.footer .footer-content .formulario-content #formulario input{
+    width: 90%;
+    height: 40px;
+    margin: auto;
+    border: 2px solid var(red);
+    border-radius: 24px;
+    outline: none;
+    text-align: center;
+    font-size: 17px;
+    color: var(black);
+}
+
+.footer .footer-content .formulario-content #formulario textarea{
+    width: 90%;
+    height: 200px;
+    margin: auto;
+    border: 2px solid var(red);
+    border-radius: 24px;
+    outline: none;
+    font-size: 15px;
+    color: var(black);
+    padding: 20px;
+}
+
+.footer .footer-content .formulario-content #formulario .send{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+}
+
+.footer .footer-content .formulario-content #formulario .send button{
+    width: 150px;
+    height: 40px;
+    background: var(--fuchsia);
+    border-radius: 24px;
+    border: none;
+    outline: none; 
+     font-size: 22px;
+    color: #fff;   
+    
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.footer .footer-content .formulario-content #formulario .send button:hover{
+    background: var(--green);
+}
+
+.footer .footer-content .footer-text{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    border-top: 5px solid #fff;
+    width: 100%;
+    height: 60px;   
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footer-content .footer-text p{
+    color: #fff;
+    font-size: 20px;
+}
+
+/**Footer**/
+
+
+/**Media Query**/
+
+@media only screen and (max-width:900px){
+
+    .btn-menu > .fa-bars{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .btn-menu > .fa-bars:hover{color: var(--fuchsia);}
+    .btn-menu > .fa-times{color: var(--fuchsia);}
+
+    .menu .list-container{
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: white;
+    }
+
+    .menu .list-container .lists{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 5px solid var(--fuchsia);
+        flex-direction: column;        
+    }
+
+    .menu .list-container .lists li{
+        width: 90%;
+        margin: 10px 0px;
+        border-bottom: 1px solid var(--azul);
+        text-align: center;
+    }
+
+    .menu .list-container .lists li a{
+        font-size: 20px;
+        color: var(--fuchsia);  
+    }
+
+    .menu .list-container .lists li a.activo{
+        background: none;
+        color: var(--fuchsia);  
+        font-size: 20px;
+    }
+
+    .act-transition{
+        left: 0;
+        transition: 0.5s;
+    }
+
+}
+
+@media only screen and( max-width: 773px){
+
+    /** IMG HEADER */
+
+    .img-header .welcome h1{
+        font-size: 40px;
+    }
+
+    .img-header .welcome > button{
+        width:130px;
+        font-size: 20px;
+    }
+
+    /** Acerca de Nosotros */
+
+    .acerca-de .info-container .about-gallery{
+        flex-direction: column;
+    }
+
+    .acerca-de .info-container .about-gallery img{
+        width:100%;
+    }
+
+    /*** Nuestros Eventos ***/
+
+    .our-events .container-event .img-event img{
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    
+}
+
+
+@media only screen and (max-width: 590px){
+
+/*** IMG HEADER ***/
+
+.img-header .welcome h1{
+    font-size: 30px;
+}
+
+.img-header .welcome hr{
+    width: 100px;
+}
+
+.img-header .welcome p{
+    font-size: 17px;
+}
+
+.img-header .welcome .welcome > button{
+    width: 100%;
+    font-size: 17px;
+}
+
+.footer .footer-content .formulario-content{
+    width: 90%;        
+}
+
+}
+
+@media only screen and (max-width: 890px){
+
+    .our-customers .satisfechos .customers-card .card-img img{    
+        width: 200px;
+        height: 200px;    
+    }
+
+    .our-customers .satisfechos .customers-card{
+        width: 100%;
+    }
+
+    .our-customers .satisfechos .customers-card .client-info h4{
+        font-size: 25px;
+    }
+
+    .our-customers .satisfechos .customers-card .client-info h4{
+        font-size: 17px;
+        line-height: 35px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    .footer .formulario-content{
+        width: 70%;
+        padding: 20px;
+    }
+
+    .footer .formulario-content #formulario input{
+        width: 100%;
+    }
+
+    .footer .formulario-content #formulario textarea{
+        width: 100%;
+    }
+}
